@@ -15,8 +15,8 @@ public class Controller {
 
         @PostMapping("/converter")
         public ResponseEntity<byte[]> getImage(@RequestBody byte[] image) throws IOException {
-            Convert ici = new Converter(image);
-            byte[] out = ici.Convert();
+            Convert object = new Converter(image);
+            byte[] out = object.Convert();
             return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(out);
         }
 
